@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@tidbits/tidbits/dist/tidbits.min.css';
+@import '~@tidbits/tidbits-default-theme/scss/partials/variables';
+
+@import 'styles/overrides';

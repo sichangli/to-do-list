@@ -1,0 +1,97 @@
+@import '~@tidbits/tidbits-default-theme/scss/partials/variables';
+@import '~@tidbits/tidbits-default-theme/scss/partials/icons';
+@import '~@tidbits/tidbits-default-theme/scss/partials/mixins';
+
+// Modify default tidbits theme
+.tb-default-theme {
+  // Overrides the margin-bottom of tb default input inside the date picker and tag input.
+  input.dp-picker-input,
+  input.tag-input,
+  input.ng2-tag-input__text-input,
+  select.ratings-select {
+    margin-bottom: 0;
+  }
+
+  input.no-margin-bottom,
+  textarea.no-margin-bottom,
+  button.no-margin-bottom {
+    margin-bottom: 0;
+  }
+
+  // Overrides default link styling for elements with class text-link. Applies default text color to such links.
+  a.text-link {
+    color: $tbTextColor;
+
+    &:hover {
+      color: $tbTextColor;
+    }
+  }
+
+  // Modal tweaks.
+  .tb-modal__footer {
+    padding: 15px;
+  }
+
+  .tb-btn-group {
+    gadget-button {
+      margin-right: 6px;
+    }
+  }
+
+  // Overrides the default tidbits table styles to allow multiple items in a <th> block.
+  .tb-table {
+    th {
+      .tb-table__col--sortable,
+      .tb-table__col--sorted-asc,
+      .tb-table__col--sorted-desc {
+        cursor: pointer;
+        user-select: none;
+        &::after {
+          font-family: 'tidbits-svgicons';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          margin-left: 1em;
+          font-size: 10px;
+          color: $tbColorGray;
+        }
+        &:hover:after {
+          color: $tbColorControlBlue;
+        }
+      }
+
+      .tb-table__col--sorted-asc::after {
+        content: '\e643';
+      }
+
+      .tb-table__col--sorted-desc::after {
+        content: '\e611';
+      }
+
+      .gadget-table-header-input {
+        display: inline-block;
+        select,
+        input {
+          margin-bottom: 0;
+          line-height: $tbExtraSmallSize;
+          height: $tbInputLineHeight;
+          font-size: $tbExtraSmallSize;
+        }
+      }
+    }
+  }
+
+  .tb-icon--small {
+    font-size: 0.8em;
+    padding: 0 0.1em;
+  }
+
+  .tb-icon--medium {
+    font-size: 1.4em;
+    padding: 0 0.2em;
+  }
+}

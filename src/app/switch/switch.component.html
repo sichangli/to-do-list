@@ -1,0 +1,9 @@
+<div fxLayout="row">
+  <div *ngIf="title" class="title">
+    {{title}}
+  </div>
+  <div class="tb-switch">
+    <input #input [id]="id" type="checkbox" [checked]="checked" (change)="onCheckedChange()">
+    <label [for]="id" class="default small"></label>
+  </div>
+</div>

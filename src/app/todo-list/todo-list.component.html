@@ -1,0 +1,31 @@
+<div class="ignore" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+  <todo-switch [checked]="showChecked" (checkedChange)="showChecked = $event" [title]="'Show Checked'"></todo-switch>
+
+  <todo-button [defaultClass]="'tb-btn--alert'"
+                 [inProgress]="isChecking"
+                 [disabled]="allChecked()"
+                 (click)="checkAll()">Check All</todo-button>
+</div>
+
+<ng-container *ngFor="let todoGroup of todoGroups">
+  <ng-container *ngIf="showTodoGroup(todoGroup)">
+    <div fxLayout="row" fxLayoutGap="12px">
+    <span class="expand-icon" [ngClass]="buildExpandIconCssClass(todoGroup.type)"
+          (click)="toggleExpanded(todoGroup.type)"></span>
+      <h2>{{todoGroup.type}}</h2>
+    </div>
+    <div class="todo-detail" *ngIf="isExpanded(todoGroup.type)">
+      <div *ngFor="let todo of todoGroup.uncheckedTodos" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+        <span class="check-icon tb-icon--delete tb-clr--icon-red" (click)="check(todo, todoGroup)"></span>
+        <span>{{todo.title}}</span>
+      </div>
+
+      <ng-container *ngIf="showChecked">
+        <div *ngFor="let todo of todoGroup.checkedTodos" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+          <span class="check-icon tb-icon--plus tb-clr--icon-blue" (click)="uncheck(todo, todoGroup)"></span>
+          <span>{{todo.title}}</span>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-container>

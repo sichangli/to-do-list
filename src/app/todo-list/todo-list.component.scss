@@ -1,0 +1,26 @@
+@import '~@tidbits/tidbits-default-theme/scss/partials/variables';
+
+:host {
+  display: block;
+  padding: $tbTextMargin $tbGridOuterGutter;
+}
+
+.ignore {
+  margin-bottom: 20px;
+}
+
+.expand-icon {
+  cursor: pointer;
+  color: $tbLinkColor;
+}
+
+.check-icon {
+  cursor: pointer;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.todo-detail {
+  margin-left: 37px;
+  margin-bottom: 20px;
+}
