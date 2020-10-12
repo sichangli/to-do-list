@@ -1,13 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TodoDataService} from './todo-data.service';
-import {Todo} from './todo';
-import { flatMap, get, groupBy, map } from 'lodash';
-
-interface TodoGroup {
-  type: string;
-  checkedTodos: Todo[];
-  uncheckedTodos: Todo[];
-}
+import {Todo, TodoGroup} from './todo';
 
 @Component({
   selector: 'todo-todo-list',

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {of} from 'rxjs';
-import {todos} from './todos';
-import {Todo} from './todo';
+import {Todo, todos} from './todo';
 
 @Injectable({
   providedIn: 'root'
